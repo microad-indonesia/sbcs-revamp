@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+    sbcs-fe:
+      image: registry.microad.co.id/sbcs-indonesia/sbcs-revamp:stable
+      container_name: sbcs-revamp
+      restart: always
+      ports:
+        - 3000:3000
+      networks:
+        - sbcs-networks
+
+networks:
+  sbcs-networks:
+    driver: bridge

@@ -1,0 +1,134 @@
+ [
+    {
+      "id" : "1",
+      "name": "tali super",
+      "slug": "tali-super",
+      "source": "/assets/images/products/catalog/LMA-product-4x3-5KG-SUPER-MERAH.png",
+      "variant":[
+        "/assets/images/products/catalog/LMA-product-4x3-5KG-SUPER-BIRU.png",
+        "/assets/images/products/catalog/LMA-product-4x3-5KG-SUPER-IJO.png",
+        "/assets/images/products/catalog/LMA-product-4x3-5KG-SUPER-KUNING.png"
+      ],
+      "desc": "Memiliki warna yang sangat glossy dan jarang ditemukan di pasaran, membuat tali ini sangat unik dan langka untuk membuat kita merajai market. \n Memiliki 6 Warna : Merah, Biru, Kuning, Hijau, Ungu, Oren \n Tersedia dalam 2 ukuran = 5kg dan 10kg",
+      "price": "21.000 /kg"
+    },
+    {
+      "id" : "2",
+      "name": "tali warna",
+      "slug": "tali-warna",
+      "source": "/assets/images/products/catalog/LMA-product-4x3-5KG-DOFF-MERAH.png",
+      "variant":[
+        "/assets/images/products/catalog/LMA-product-4x3-5KG-DOFF-KUNING.png",
+        "/assets/images/products/catalog/LMA-product-4x3-5KG-DOFF-BIRU.png",
+        "/assets/images/products/catalog/LMA-product-4x3-5KG-DOFF-IJO.png"
+      ],
+      "desc": "Memiliki warna yang sangat beragam membuat tali ini sangat unik dan langka untuk membuat kita merajai market.\n Memiliki 4 Warna : Merah, Biru, Kuning, Hijau \n Tersedia dalam 2 ukuran = 5kg dan 10kg",
+      "price": "19.000 /kg"
+    },
+    {
+      "id" : "3",
+      "name": "tali abu-abu",
+      "slug": "tali-abu",
+      "source": "/assets/images/products/catalog/LMA-product-4x3-5KG-ABU.png",
+      "variant":[
+        "/assets/images/products/catalog/LMA-product-4x3-5KG-ABU.png",
+        "/assets/images/products/catalog/LMA-product-4x3-5KG-ABU.png",
+        "/assets/images/products/catalog/LMA-product-4x3-5KG-ABU.png"
+      ],
+      "desc": "Memiliki warna Abu-abu/Natural yang menjadi best seller produk kami sepanjang Masa. \n Tersedia dalam 2 ukuran = 5kg dan 10kg",
+      "price": "13.750 /kg"
+    },
+    {
+      "id" : "4",
+      "name": "tali putih",
+      "slug": "tali-putih",
+      "source": "/assets/images/products/catalog/LMA-product-4x3-5KG-PUTIH.png",
+      "variant":[
+        "/assets/images/products/catalog/LMA-product-4x3-5KG-PUTIH.png",
+        "/assets/images/products/catalog/LMA-product-4x3-5KG-PUTIH.png",
+        "/assets/images/products/catalog/LMA-product-4x3-5KG-PUTIH.png"
+      ],
+      "desc": "Satu-satunya tali dengan warna putih seputih salju di kelas nya. \n Tersedia dalam 2 ukuran = 5kg dan 10kg",
+      "price": "20.700 /kg"
+    },
+    {
+      "id" : "5",
+      "name": "tali silver",
+      "slug": "tali-silver",
+      "source": "/assets/images/products/catalog/LMA-product-4x3-5KG-SILVER.png",
+      "variant":[
+        "/assets/images/products/catalog/LMA-product-4x3-5KG-SILVER.png",
+        "/assets/images/products/catalog/LMA-product-4x3-5KG-SILVER.png",
+        "/assets/images/products/catalog/LMA-product-4x3-5KG-SILVER.png"
+      ],
+      "desc": "Tali yang berwarna langka ini hanya diproduksi oleh kami saja. Segera miliki produk ini. \n Tersedia dalam 2 ukuran = 5kg dan 10kg",
+      "price": "13.750 /kg"
+    },
+    {
+      "id" : "6",
+      "name": "tali hitam",
+      "slug": "tali-hitam",
+      "source": "/assets/images/products/catalog/LMA-product-4x3-5KG-HITAM.png",
+      "variant":[
+        "/assets/images/products/catalog/LMA-product-4x3-5KG-HITAM.png",
+        "/assets/images/products/catalog/LMA-product-4x3-5KG-HITAM.png",
+        "/assets/images/products/catalog/LMA-product-4x3-5KG-HITAM.png"
+      ],
+      "desc": "Tali dengan warna hitam pekat nan glossy. Jauh berbeda dengan kawan-kawan sekelasnya. \n Tersedia dalam 2 ukuran = 5kg dan 10kg",
+      "price": "14.700 /kg"
+    },
+    {
+      "id" : "7",
+      "name": "tali gudang beras",
+      "slug": "tali-gudang-beras",
+      "source": "/assets/images/products/catalog/LMA-product-4x3-GUDANG-ABU.png",
+      "variant":[
+        "/assets/images/products/catalog/LMA-product-4x3-GUDANG-1BAL.png",
+        "/assets/images/products/catalog/LMA-product-4x3-GUDANG-1BAL.png",
+        "/assets/images/products/catalog/LMA-product-4x3-GUDANG-1BAL.png"
+      ],
+      "desc": "warna abu-abu \n berat 5 ons \n lebih murah \n 1 bal = 15 pieces",
+      "price": "15.150 /piece"
+    },
+    {
+      "id" : "8",
+      "name": "tali lonceng",
+      "slug": "tali-lonceng",
+      "source": "/assets/images/products/catalog/LMA-product-4x3-LONCENG-BIRU.png",
+      "variant":[
+        "/assets/images/products/catalog/LMA-product-4x3-LONCENG-IJO.png",
+        "/assets/images/products/catalog/LMA-product-4x3-LONCENG-KUNING.png",
+        "/assets/images/products/catalog/LMA-product-4x3-LONCENG-MERAH.png"
+      ],
+      "desc": "memiliki 4 warna \n berat 1 kg \n warna lebih cerah \n 1 bal = 15 pieces",
+      "price": "22.650 /piece"
+    },
+    {
+      "id" : "9",
+      "name": "tali 1001",
+      "slug": "tali-1001",
+      "source": "/assets/images/products/catalog/LMA-product-4x3-1001-MERAH.png",
+      "variant":[
+        "/assets/images/products/catalog/LMA-product-4x3-1001-PUTIH.png",
+        "/assets/images/products/catalog/LMA-product-4x3-1001-BIRU.png",
+        "/assets/images/products/catalog/LMA-product-4x3-1001-IJO.png"
+      ],
+      "desc": "memiliki 4 warna \n berat 8 ons \n warna lebih cerah \n 1 bal = 15 pieces",
+      "price": "23.100 /piece"
+    },
+    {
+      "id" : "10",
+      "name": "tali mobil abu",
+      "slug": "tali-mobil-abu",
+      "source": "/assets/images/products/catalog/LMA-product-4x3-MOBIL-ABU.png",
+      "variant":[
+        "/assets/images/products/catalog/LMA-product-4x3-MOBIL-1BAL.png",
+        "/assets/images/products/catalog/LMA-product-4x3-MOBIL-1BAL.png",
+        "/assets/images/products/catalog/LMA-product-4x3-MOBIL-1BAL.png"
+      ],
+      "desc": "warna abu-abu \n berat 5 ons \n lebih murah \n 1 bal = 15 pieces",
+      "price": "9.900 /piece"
+    }
+
+  ]
+

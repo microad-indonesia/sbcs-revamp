@@ -1,0 +1,95 @@
+# This file is a template, and might need editing before it works on your project.
+# To contribute improvements to CI/CD templates, please follow the Development guide at:
+# https://docs.gitlab.com/ee/development/cicd/templates.html
+# This specific template is located at:
+# https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/ci/templates/Docker.gitlab-ci.yml
+
+# Build a Docker image with CI/CD and push to the GitLab registry.
+# Docker-in-Docker documentation: https://docs.gitlab.com/ee/ci/docker/using_docker_build.html
+#
+# This template uses one generic job with conditional builds
+# for the default branch and all other (MR) branches.
+stages:
+  - build
+  - deploy
+
+staging-build:
+  # Use the official docker image.
+  stage: build
+  before_script:
+    - docker login -u $CI_DEPLOY_USER -p $CI_DEPLOY_PASSWORD $CI_REGISTRY
+    # - echo $ENV_LOCAL >> .env.local
+  variables:
+    IMAGE_NAME: "sbcs-revamp"
+    CI_PROJECT_PATH: "sbcs-indonesia"
+  script:
+    # BUILD IMAGE WITH COMMIT SHA
+    # - docker build . -f staging.Dockerfile -t $CI_REGISTRY/$CI_PROJECT_PATH/$IMAGE_NAME:$CI_JOB_ID
+    - docker buildx build -f staging.Dockerfile -t $CI_REGISTRY/$CI_PROJECT_PATH/$IMAGE_NAME:$CI_JOB_ID --build-arg BUILDKIT_INLINE_CACHE=1 .
+
+    # RETAG IMAGE LATEST WITH DIGEST FROM PREVIOUS IMAGE
+    #- IMAGE_ID=$(docker images | grep $CI_REGISTRY/$CI_PROJECT_PATH/$IMAGE_NAME | awk '{print $3}')
+    - docker tag $CI_REGISTRY/$CI_PROJECT_PATH/$IMAGE_NAME:$CI_JOB_ID $CI_REGISTRY/$CI_PROJECT_PATH/$IMAGE_NAME:staging
+
+    # PUSH IMAGE COMMIT SHA and LATEST
+    - docker push $CI_REGISTRY/$CI_PROJECT_PATH/$IMAGE_NAME:$CI_JOB_ID
+    - docker push $CI_REGISTRY/$CI_PROJECT_PATH/$IMAGE_NAME:staging
+  tags:
+    - staging
+  only:
+    - staging
+
+staging-deployment:
+  stage: deploy
+  environment:
+    name: staging
+    url: https://sbcs.staging.microad.co.id:444
+  script:
+    - docker system prune -f
+    - docker-compose -f docker-compose-staging.yml pull
+    - docker-compose -f docker-compose-staging.yml up -d
+  tags:
+    - staging
+  only:
+    - staging
+
+production-build:
+  # Use the official docker image.
+  stage: build
+  before_script:
+    - docker login -u $CI_DEPLOY_USER -p $CI_DEPLOY_PASSWORD $CI_REGISTRY
+    # - echo $ENV_PROD >> .env.production
+  variables:
+    IMAGE_NAME: "sbcs-revamp"
+    CI_PROJECT_PATH: "sbcs-indonesia"
+  script:
+    # BUILD IMAGE WITH COMMIT SHA
+    - docker buildx build -f prod.Dockerfile -t $CI_REGISTRY/$CI_PROJECT_PATH/$IMAGE_NAME:$CI_JOB_ID --build-arg BUILDKIT_INLINE_CACHE=1 .
+
+    # RETAG IMAGE LATEST WITH DIGEST FROM PREVIOUS IMAGE
+    #- IMAGE_ID=$(docker images | grep $CI_REGISTRY/$CI_PROJECT_PATH/$IMAGE_NAME | awk '{print $3}')
+    - docker tag $CI_REGISTRY/$CI_PROJECT_PATH/$IMAGE_NAME:$CI_JOB_ID $CI_REGISTRY/$CI_PROJECT_PATH/$IMAGE_NAME:stable
+
+    # PUSH IMAGE COMMIT SHA and LATEST
+    #- docker push $CI_REGISTRY/$CI_PROJECT_PATH/$IMAGE_NAME:$CI_JOB_ID
+    - docker push $CI_REGISTRY/$CI_PROJECT_PATH/$IMAGE_NAME:stable
+  tags:
+    - staging
+  only:
+    - production
+
+production-deployment:
+  stage: deploy
+  environment:
+    name: production
+    url: http://sbcs.co.id
+  before_script:
+    - docker login -u $CI_DEPLOY_USER -p $CI_DEPLOY_PASSWORD $CI_REGISTRY
+  script:
+    - docker system prune -f
+    - docker compose -f docker-compose-prod.yml pull
+    - docker compose -f docker-compose-prod.yml up -d
+  only:
+    - production
+  tags:
+    - sbcs-prod

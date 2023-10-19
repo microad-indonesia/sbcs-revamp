@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .underlinex {
+    @apply relative before:bg-sbcs-green before:rounded-bl before:-bottom-1.5 before:h-0.5 before:inset-x-0 before:absolute before:transform before:origin-left before:scale-x-0 before:transition-all before:duration-200 hover:before:scale-x-100;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-cairoSans;
+  }
+
+  p,
+  span,
+  a {
+    @apply font-sans;
+  }
+
+  h1 {
+    @apply text-3xl font-semibold md:text-4xl;
+  }
+  h2 {
+    @apply text-2xl font-semibold md:text-[32px];
+  }
+
+  h4 {
+    @apply text-[28px] font-semibold;
+  }
+
+  p {
+    @apply text-base md:text-lg leading-6;
+  }
+
+  .btn-blue {
+    @apply rounded-xl ring-2 ring-lm-blue bg-lm-blue text-lm-light;
+  }
+
+  .btn-ring-blue {
+    @apply rounded-xl ring-2 ring-lm-blue;
+  }
+
+  .markdown {
+    @apply text-lg leading-relaxed;
+  }
+
+  .markdown p,
+  .markdown ul,
+  .markdown ol,
+  .markdown blockquote {
+    @apply my-6;
+  }
+
+  .markdown h2 {
+    @apply text-3xl mt-12 mb-4 leading-snug;
+  }
+
+  .markdown h3 {
+    @apply text-2xl mt-8 mb-4 leading-snug;
+  }
+  .markdown img {
+    @apply w-full h-auto;
+  }
+}
+
+#rc-anchor-container {
+  width: 100%;
+}

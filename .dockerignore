@@ -1,0 +1,12 @@
+php/
+nginx/
+sql/
+docker-compose.yml
+docker-compose-staging.yml
+docker-compose-prod.yml
+compose.yml
+Dockerfile
+staging.Dockerfile
+prod.Dockerfile
+.gitlab-ci.yml
+Makefile

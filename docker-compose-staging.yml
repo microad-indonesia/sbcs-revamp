@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+    sbcs-fe-staging:
+      image: registry.microad.co.id/sbcs-indonesia/sbcs-revamp:staging
+      ports:
+        - 3003:3003
+      container_name: sbcs-revamp-staging
+      restart: always
+      networks:
+        - staging-php-network
+
+networks:
+  staging-php-network:
+    external: true
+    name: docker-staging-php

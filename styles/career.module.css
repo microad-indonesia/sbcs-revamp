@@ -1,0 +1,39 @@
+.career {
+  @apply text-lg leading-relaxed;
+}
+
+.career p,
+.career ul,
+.career ol,
+.career blockquote,
+.career span {
+  @apply my-6  text-sbcs-dark;
+}
+
+.career ul {
+  @apply mx-6 list-disc;
+}
+.career ol {
+  @apply mx-6 list-decimal;
+}
+
+.career h2 {
+  @apply text-3xl mt-12 mb-4 leading-snug capitalize;
+}
+
+.career h3 {
+  @apply text-2xl mt-8 mb-4 leading-snug capitalize;
+}
+
+.career a,
+.career h2 {
+  @apply text-sbcs-dark;
+}
+
+.career p span li {
+  @apply break-words whitespace-pre-line;
+}
+
+.career img {
+  @apply mx-auto;
+}
